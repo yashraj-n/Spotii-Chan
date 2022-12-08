@@ -1,0 +1,17 @@
+ .search_quote {
+    * {
+      text-align: center;
+      font-family: "Montserrat";
+      font-weight: 400;
+    }
+  }
+
+  .song_grid {
+    width: 100%;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, max-content));
+
+    align-items: center;
+    justify-content: center;
+  }

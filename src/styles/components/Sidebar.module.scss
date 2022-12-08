@@ -1,0 +1,46 @@
+ .sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem;
+    border-right: 1px solid #ffffff;
+  }
+
+  .main_sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .sidebar_opt {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    justify-content: center;
+
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+
+    cursor: pointer;
+    transition: all 0.01s ease-in-out;
+  }
+
+  .sidebar_opt:hover {
+    background-color: #2a2a31;
+  }
+
+  .sidebar_opt_text {
+    font-size: 1.1rem;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  .sidebar_opt_logo {
+    width: 2rem;
+    height: 2rem;
+  }

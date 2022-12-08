@@ -1,0 +1,30 @@
+{
+  "name": "Spotii-Chan",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "next dev -p 1420",
+    "build": "next build && next export -o dist",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.1",
+    "@tauri-apps/api": "^1.2.0",
+    "next": "^12.2.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-modal": "^3.16.1",
+    "react-redux": "^8.0.5",
+    "react-toastify": "^9.1.1",
+    "sass": "^1.56.1",
+    "three-dots": "^0.3.2"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.1.0",
+    "@types/node": "^18.7.11",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@types/react-modal": "^3.13.1",
+    "typescript": "^4.7.4"
+  }
+}

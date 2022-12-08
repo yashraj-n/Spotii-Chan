@@ -1,0 +1,67 @@
+ .heading {
+    font-family: "Montserrat";
+    font-style: normal;
+    justify-content: center;
+    display: flex;
+  }
+  .downloads_list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    .card {
+      min-width: 80%;
+      padding: 0.5rem;
+      background: #2a2a2f;
+      border-radius: 5px;
+      align-items: center;
+      display: flex;
+      gap: 1rem;
+    }
+    .open_folder {
+      cursor: pointer;
+      height: 1.5rem;
+    }
+
+    .name {
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 650;
+      text-align: center;
+    }
+    .artist {
+      font-family: "Montserrat";
+      font-style: normal;
+      font-size: 13px;
+
+      color: rgba(255, 255, 255, 0.5);
+    }
+    .album_img {
+      height: 3.4rem;
+      widows: 3.4rem;
+      border-radius: 0.4rem;
+    }
+
+    .slider_cont {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      width: 100%;
+
+      .slider_sec {
+        color: #9d9d9d;
+      }
+
+      .full_slider {
+        background-color: #3b3b3b;
+        border-radius: 5px;
+        width: 80vh;
+        div {
+          background-color: #14810b;
+
+          height: 15px;
+          border-radius: 5px;
+        }
+      }
+    }
+  }

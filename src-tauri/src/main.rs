@@ -71,10 +71,10 @@ async fn get_yt_url(query: String) -> String {
 }
 //* Init function, whenever app starts, this will run
 #[tauri::command]
-async fn start_init(window: Window) -> String {
+async fn start_init() -> String {
     //If yt.exe or yt doesnt exists in ~/.spotii, it'll download it
     if !check_ytdl_exists() {
-        download_binary::DownloadLatestYTDL().await;
+        download_binary::download_latest_ytdl().await;
         println!("Downloaded YTDL");
     } else {
         println!("YTDL Exists");
@@ -139,13 +139,13 @@ fn open_folder(path: String) {
 
     #[cfg(target_os = "macos")]
     Command::new("open")
-        .args(["-R", folder.to_str().unwrap()])
+        .args(["-R", &folder().unwrap()])
         .spawn()
         .unwrap();
 
     #[cfg(target_os = "linux")]
     Command::new("xdg-open")
-        .arg(folder.to_str().unwrap())
+        .arg(&folder().unwrap())
         .spawn()
         .unwrap();
 }

@@ -9,9 +9,6 @@ use tauri::Window;
 use uuid::Uuid;
 // Windows:  Command opens a window when executing
 // This is a workaround to hide the window
-const CREATE_NO_WINDOW: u32 = 0x08000000;
-use std::os::windows::process::CommandExt;
-
 
 // Data which is returned to the frontend
 #[derive(Clone)]
@@ -52,22 +49,17 @@ pub fn cmd_download(
 
     let uid = Uuid::new_v4().to_string();
     println!("Downloading {}", url);
-    // #[cfg(target_os = "windows")]
-    // {   // Uses powershell to run the command
-    //     let mut command = Command::new("powershell");
-    // }
-    // #[cfg(target_os = "linux")]
-    // {
-    //     // Uses bash to run the command
-    //     let mut command = Command::new("bash");
-    // }
+
+   
     let mut command = if cfg!(target_os = "windows") {
         Command::new("powershell")
     } else {
         Command::new("bash")
     };
-    if cfg!(target_os = "windows") {
-        // Adds the -NoWindow flag to the command
+
+    if !cfg!(target_os = "windows") {
+        const CREATE_NO_WINDOW: u32 = 0x08000000;
+        use std::os::windows::process::CommandExt;
         command.creation_flags(CREATE_NO_WINDOW);
     }
     let parsed_location = Path::new(&location).to_str().unwrap();

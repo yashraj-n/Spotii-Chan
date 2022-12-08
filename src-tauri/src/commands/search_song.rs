@@ -1,7 +1,6 @@
 use rspotify::{
-    model::{AdditionalType, AlbumId, Country, Market, SearchType, TrackId},
-    prelude::*,
-    scopes, AuthCodeSpotify, Credentials, OAuth,
+    model::{SearchType, TrackId},
+    prelude::*, AuthCodeSpotify,
 };
 
 // Searches Song on Spotify

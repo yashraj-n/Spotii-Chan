@@ -2,10 +2,11 @@ use super::config_file;
 use std::{fs, io::Write, path::Path};
 //* YT-dlp Downlaod links for Linux and Windows OS */
 const YT_WINDOWS: &str = "https://github.com/yt-dlp/yt-dlp/releases/download/2022.11.11/yt-dlp.exe";
+#[cfg(target_os = "linux")]
 const YT_LINUX: &str = "https://github.com/yt-dlp/yt-dlp/releases/download/2022.11.11/yt-dlp_linux";
 
 // Downloads the latest version of yt-dlp
-pub async fn DownloadLatestYTDL() {
+pub async fn download_latest_ytdl() {
     // Gets the config folder location
     let config_path = config_file::get_config_folder_location();
 

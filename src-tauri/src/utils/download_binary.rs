@@ -44,7 +44,7 @@ pub fn check_ytdl_exists() -> bool {
     #[cfg(target_os = "linux")]
     // Linux
     {
-        if !Path::new(format!("{}/yt", config_path)).exists() {
+        if !Path::new(&format!("{}/yt", config_path)).exists() {
             false
         } else {
             true

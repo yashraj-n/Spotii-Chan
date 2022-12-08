@@ -139,13 +139,13 @@ fn open_folder(path: String) {
 
     #[cfg(target_os = "macos")]
     Command::new("open")
-        .args(["-R", &folder().unwrap()])
+        .args(["-R", &folder.unwrap()])
         .spawn()
         .unwrap();
 
     #[cfg(target_os = "linux")]
     Command::new("xdg-open")
-        .arg(&folder().unwrap())
+        .arg(&folder.unwrap())
         .spawn()
         .unwrap();
 }
